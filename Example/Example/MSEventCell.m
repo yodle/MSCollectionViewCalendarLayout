@@ -7,7 +7,7 @@
 //
 
 #import "MSEventCell.h"
-#import "MSEvent.h"
+#import "STJob.h"
 
 @interface MSEventCell ()
 
@@ -35,15 +35,15 @@
         self.borderView = [UIView new];
         [self.contentView addSubview:self.borderView];
         
-        self.title = [UILabel new];
-        self.title.numberOfLines = 0;
-        self.title.backgroundColor = [UIColor clearColor];
-        [self.contentView addSubview:self.title];
+        self.summary = [UILabel new];
+        self.summary.numberOfLines = 0;
+        self.summary.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview:self.summary];
         
-        self.location = [UILabel new];
-        self.location.numberOfLines = 0;
-        self.location.backgroundColor = [UIColor clearColor];
-        [self.contentView addSubview:self.location];
+        self.customer = [UILabel new];
+        self.customer.numberOfLines = 0;
+        self.customer.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview:self.customer];
         
         [self updateColors];
         
@@ -58,14 +58,14 @@
             make.top.equalTo(self.top);
         }];
         
-        [self.title makeConstraints:^(MASConstraintMaker *make) {
+        [self.summary makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.top).offset(contentPadding.top);
             make.left.equalTo(self.left).offset(contentPadding.left);
             make.right.equalTo(self.right).offset(-contentPadding.right);
         }];
         
-        [self.location makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.title.bottom).offset(contentMargin);
+        [self.customer makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.summary.bottom).offset(contentMargin);
             make.left.equalTo(self.left).offset(contentPadding.left);
             make.right.equalTo(self.right).offset(-contentPadding.right);
             make.bottom.lessThanOrEqualTo(self.bottom).offset(-contentPadding.bottom);
@@ -98,19 +98,19 @@
 
 #pragma mark - MSEventCell
 
-- (void)setEvent:(MSEvent *)event
+- (void)setJob:(STJob*)job
 {
-    _event = event;
-    self.title.attributedText = [[NSAttributedString alloc] initWithString:event.title attributes:[self titleAttributesHighlighted:self.selected]];
-    self.location.attributedText = [[NSAttributedString alloc] initWithString:event.location attributes:[self subtitleAttributesHighlighted:self.selected]];;
+    _job = job;
+    self.summary.attributedText = [[NSAttributedString alloc] initWithString:job.summary attributes:[self titleAttributesHighlighted:self.selected]];
+    self.customer.attributedText = [[NSAttributedString alloc] initWithString:job.customer attributes:[self subtitleAttributesHighlighted:self.selected]];;
 }
 
 - (void)updateColors
 {
     self.contentView.backgroundColor = [self backgroundColorHighlighted:self.selected];
     self.borderView.backgroundColor = [self borderColor];
-    self.title.textColor = [self textColorHighlighted:self.selected];
-    self.location.textColor = [self textColorHighlighted:self.selected];
+    self.summary.textColor = [self textColorHighlighted:self.selected];
+    self.customer.textColor = [self textColorHighlighted:self.selected];
 }
 
 - (NSDictionary *)titleAttributesHighlighted:(BOOL)highlighted

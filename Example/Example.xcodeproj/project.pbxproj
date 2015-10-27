@@ -21,7 +21,7 @@
 		3A9EDB9416DD913A0017C4ED /* MSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDB9316DD913A0017C4ED /* MSCalendarViewController.m */; };
 		3A9EDB9916DD938A0017C4ED /* MSGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDB9816DD938A0017C4ED /* MSGridline.m */; };
 		3A9EDB9C16DD94940017C4ED /* MSTimeRowHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDB9B16DD94940017C4ED /* MSTimeRowHeaderBackground.m */; };
-		3A9EDBA216DD99E00017C4ED /* MSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDBA116DD99E00017C4ED /* MSEvent.m */; };
+		3A9EDBA216DD99E00017C4ED /* STJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDBA116DD99E00017C4ED /* STJob.m */; };
 		3A9EDBA616DDA0140017C4ED /* Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDBA416DDA0140017C4ED /* Example.xcdatamodeld */; };
 		3A9EDBAA16DDA7410017C4ED /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDBA916DDA7410017C4ED /* MSEventCell.m */; };
 		3A9EDBAD16DDA8420017C4ED /* MSTimeRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDBAC16DDA8420017C4ED /* MSTimeRowHeader.m */; };
@@ -56,8 +56,8 @@
 		3A9EDB9816DD938A0017C4ED /* MSGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGridline.m; sourceTree = "<group>"; };
 		3A9EDB9A16DD94940017C4ED /* MSTimeRowHeaderBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeRowHeaderBackground.h; sourceTree = "<group>"; };
 		3A9EDB9B16DD94940017C4ED /* MSTimeRowHeaderBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeaderBackground.m; sourceTree = "<group>"; };
-		3A9EDBA016DD99E00017C4ED /* MSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEvent.h; sourceTree = "<group>"; };
-		3A9EDBA116DD99E00017C4ED /* MSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEvent.m; sourceTree = "<group>"; };
+		3A9EDBA016DD99E00017C4ED /* STJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STJob.h; sourceTree = "<group>"; };
+		3A9EDBA116DD99E00017C4ED /* STJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STJob.m; sourceTree = "<group>"; };
 		3A9EDBA516DDA0140017C4ED /* Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Example.xcdatamodel; sourceTree = "<group>"; };
 		3A9EDBA816DDA7410017C4ED /* MSEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEventCell.h; sourceTree = "<group>"; };
 		3A9EDBA916DDA7410017C4ED /* MSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEventCell.m; sourceTree = "<group>"; };
@@ -197,8 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				3A9EDBA416DDA0140017C4ED /* Example.xcdatamodeld */,
-				3A9EDBA016DD99E00017C4ED /* MSEvent.h */,
-				3A9EDBA116DD99E00017C4ED /* MSEvent.m */,
+				3A9EDBA016DD99E00017C4ED /* STJob.h */,
+				3A9EDBA116DD99E00017C4ED /* STJob.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -320,7 +320,7 @@
 				3A9EDB9416DD913A0017C4ED /* MSCalendarViewController.m in Sources */,
 				3A9EDB9916DD938A0017C4ED /* MSGridline.m in Sources */,
 				3A9EDB9C16DD94940017C4ED /* MSTimeRowHeaderBackground.m in Sources */,
-				3A9EDBA216DD99E00017C4ED /* MSEvent.m in Sources */,
+				3A9EDBA216DD99E00017C4ED /* STJob.m in Sources */,
 				3A9EDBA616DDA0140017C4ED /* Example.xcdatamodeld in Sources */,
 				3A9EDBAA16DDA7410017C4ED /* MSEventCell.m in Sources */,
 				3A9EDBAD16DDA8420017C4ED /* MSTimeRowHeader.m in Sources */,
