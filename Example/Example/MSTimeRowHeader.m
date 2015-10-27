@@ -7,6 +7,7 @@
 //
 
 #import "MSTimeRowHeader.h"
+#import "PureLayout.h"
 
 @implementation MSTimeRowHeader
 
@@ -20,10 +21,8 @@
         self.title.font = [UIFont systemFontOfSize:12.0];
         [self addSubview:self.title];
         
-        [self.title makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.centerY);
-            make.right.equalTo(self.right).offset(-5.0);
-        }];
+        [self.title autoConstrainAttribute:NSLayoutAttributeCenterY toAttribute:NSLayoutAttributeCenterY ofView:self];
+        [self.title autoConstrainAttribute:NSLayoutAttributeRight toAttribute:NSLayoutAttributeRight ofView:self withOffset:-5];
     }
     return self;
 }

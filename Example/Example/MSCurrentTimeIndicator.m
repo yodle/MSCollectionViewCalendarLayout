@@ -7,6 +7,8 @@
 //
 
 #import "MSCurrentTimeIndicator.h"
+#import "UIColor+Hex.h"
+#import "PureLayout.h"
 
 @interface MSCurrentTimeIndicator ()
 
@@ -26,13 +28,11 @@
         
         self.time = [UILabel new];
         self.time.font = [UIFont boldSystemFontOfSize:10.0];
-        self.time.textColor = [UIColor colorWithHexString:@"fd3935"];
+        self.time.textColor = [UIColor colorWithHex:0xfd3935];
         [self addSubview:self.time];
         
-        [self.time makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.centerY);
-            make.right.equalTo(self.right).offset(-5.0);
-        }];
+        [self.time autoConstrainAttribute:NSLayoutAttributeCenterY toAttribute:NSLayoutAttributeCenterY ofView:self];
+        [self.time autoConstrainAttribute:NSLayoutAttributeRight toAttribute:NSLayoutAttributeRight ofView:self withOffset:-5.0];
         
         NSCalendar *calendar = [NSCalendar currentCalendar];
         NSDate *oneMinuteInFuture = [[NSDate date] dateByAddingTimeInterval:60];

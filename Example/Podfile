@@ -4,6 +4,6 @@ xcodeproj 'Example'
 
 pod 'MSCollectionViewCalendarLayout', :path => '../'
 
-pod 'RestKit'
-pod 'UIColor-HexString'
-pod 'Masonry'
+pod 'UIColor+Hex', '~> 1.0'
+pod 'PureLayout', '~> 1.1'
+pod 'DateTools', '~> 1.3'
