@@ -1,4 +1,5 @@
 PODS:
+  - DateTools (1.7.0)
   - MSCollectionViewCalendarLayout (0.1.5)
   - PureLayout (1.1.0)
   - UIColor+Hex (1.0.1):
@@ -7,6 +8,7 @@ PODS:
   - UIColor+Hex/UIColor (1.0.1)
 
 DEPENDENCIES:
+  - DateTools (~> 1.3)
   - MSCollectionViewCalendarLayout (from `../`)
   - PureLayout (~> 1.1)
   - UIColor+Hex (~> 1.0)
@@ -16,6 +18,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   MSCollectionViewCalendarLayout: 9c52894930d6b712951f18873618fc32c00cd4fa
   PureLayout: 461724f6da2da366709e5fe6e6006f6039b7c2dd
   UIColor+Hex: 9fee91bb8e19f17dd40a79ae1e98949a6a84489d

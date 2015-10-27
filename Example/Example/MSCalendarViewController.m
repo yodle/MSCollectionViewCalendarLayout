@@ -10,6 +10,7 @@
 #import "MSCalendarViewController.h"
 #import "MSCollectionViewCalendarLayout.h"
 #import "STJob.h"
+#import "DateTools.h"
 // Collection View Reusable Views
 #import "MSGridline.h"
 #import "MSTimeRowHeaderBackground.h"
@@ -123,28 +124,46 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     });
     
     STJob *job1 = [NSEntityDescription insertNewObjectForEntityForName:@"STJob" inManagedObjectContext:moc];
-    job1.startDate = [[NSDate date] dateByAddingTimeInterval:(60*60*1)];
-    job1.endDate = [[NSDate date] dateByAddingTimeInterval:(60*60*4)];
+    job1.startDate = [[NSDate date] dateByAddingHours:0];
+    job1.endDate = [[NSDate date] dateByAddingHours:4];
     job1.summary = @"Job 1";
     job1.customer = @"Customer 1";
     
     STJob *job2 = [NSEntityDescription insertNewObjectForEntityForName:@"STJob" inManagedObjectContext:moc];
-    job2.startDate = [[NSDate date] dateByAddingTimeInterval:(60*60*2)];
-    job2.endDate = [[NSDate date] dateByAddingTimeInterval:(60*60*5)];
+    job2.startDate = [[NSDate date] dateByAddingHours:1];
+    job2.endDate = [job2.startDate dateByAddingHours:4];
     job2.summary = @"Job 2";
-    job2.customer = @"Customer 2";
+    job2.customer = @"Long Customer Name";
     
     STJob *job3 = [NSEntityDescription insertNewObjectForEntityForName:@"STJob" inManagedObjectContext:moc];
-    job3.startDate = [[NSDate date] dateByAddingTimeInterval:(60*60*3)];
-    job3.endDate = [[NSDate date] dateByAddingTimeInterval:(60*60*6)];
+    job3.startDate = [[NSDate date] dateByAddingHours:2];
+    job3.endDate = [job3.startDate dateByAddingHours:4];
     job3.summary = @"Job 3";
     job3.customer = @"Customer 3";
     
     STJob *job4 = [NSEntityDescription insertNewObjectForEntityForName:@"STJob" inManagedObjectContext:moc];
-    job4.startDate = [[NSDate date] dateByAddingTimeInterval:(60*60*4)];
-    job4.endDate = [[NSDate date] dateByAddingTimeInterval:(60*60*7)];
+    job4.startDate = [[NSDate date] dateByAddingHours:3];
+    job4.endDate = [job4.startDate dateByAddingHours:4];
     job4.summary = @"Job 4";
     job4.customer = @"Customer 4";
+    
+    STJob *job5 = [NSEntityDescription insertNewObjectForEntityForName:@"STJob" inManagedObjectContext:moc];
+    job5.startDate = [[NSDate date] dateByAddingHours:1];
+    job5.endDate = [job5.startDate dateByAddingHours:6];
+    job5.summary = @"Job 5";
+    job5.customer = @"Customer 5";
+    
+    STJob *job6 = [NSEntityDescription insertNewObjectForEntityForName:@"STJob" inManagedObjectContext:moc];
+    job6.startDate = [[NSDate date] dateByAddingHours:0];
+    job6.endDate = [job6.startDate dateByAddingHours:7];
+    job6.summary = @"Long Job Name";
+    job6.customer = @"Customer 6";
+    
+    STJob *job7 = [NSEntityDescription insertNewObjectForEntityForName:@"STJob" inManagedObjectContext:moc];
+    job7.startDate = [job1.endDate dateByAddingHours:1];
+    job7.endDate = [job7.startDate dateByAddingHours:2];
+    job7.summary = @"Job 7";
+    job7.customer = @"Customer 7";
 }
 
 #pragma mark - MSCalendarViewController
