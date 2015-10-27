@@ -1110,6 +1110,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
         }
     }
     if (earliestHour != NSIntegerMax) {
+		if (self.displayStartOfDayToEarliestHour) {
+			earliestHour = 0;
+		}
         self.cachedEarliestHour = earliestHour;
         return earliestHour;
     } else {
@@ -1130,6 +1133,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
         }
     }
     if (latestHour != NSIntegerMin) {
+		if (self.displayEndOfDayToLatestHour) {
+			latestHour = 24;
+		}
         self.cachedLatestHour = latestHour;
         return latestHour;
     } else {
@@ -1151,6 +1157,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
         }
     }
     if (earliestHour != NSIntegerMax) {
+		if (self.displayStartOfDayToEarliestHour) {
+			earliestHour = 0;
+		}
         self.cachedEarliestHours[@(section)] = @(earliestHour);
         return earliestHour;
     } else {
@@ -1177,7 +1186,10 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
             latestHour = itemEndTimeHour;
         }
     }
-    if (latestHour != NSIntegerMin) {
+	if (latestHour != NSIntegerMin) {
+		if (self.displayEndOfDayToLatestHour) {
+			latestHour = 24;
+		}
         self.cachedLatestHours[@(section)] = @(latestHour);
         return latestHour;
     } else {
