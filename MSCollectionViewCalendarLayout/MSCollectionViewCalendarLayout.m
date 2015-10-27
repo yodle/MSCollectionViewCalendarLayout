@@ -856,7 +856,7 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 #pragma mark Scrolling
 
-- (void)scrollCollectionViewToClosetSectionToCurrentTimeAnimated:(BOOL)animated
+- (void)scrollCollectionViewToClosestSectionToCurrentTimeAnimated:(BOOL)animated
 {
     if (self.collectionView.numberOfSections != 0) {
         NSInteger closestSectionToCurrentTime = [self closestSectionToCurrentTime];
