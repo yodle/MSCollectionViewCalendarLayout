@@ -55,6 +55,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.collectionView registerClass:MSTimeRowHeader.class forSupplementaryViewOfKind:MSCollectionElementKindTimeRowHeader withReuseIdentifier:MSTimeRowHeaderReuseIdentifier];
 
     self.collectionViewCalendarLayout.sectionWidth = self.layoutSectionWidth;
+    self.collectionViewCalendarLayout.displayStartOfDayToEarliestHour = YES;
+    self.collectionViewCalendarLayout.displayEndOfDayToLatestHour = YES;
     
     // These are optional. If you don't want any of the decoration views, just don't register a class for them.
     [self.collectionViewCalendarLayout registerClass:MSCurrentTimeIndicator.class forDecorationViewOfKind:MSCollectionElementKindCurrentTimeIndicator];
@@ -64,7 +66,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.collectionViewCalendarLayout registerClass:MSTimeRowHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindTimeRowHeaderBackground];
     [self.collectionViewCalendarLayout registerClass:MSDayColumnHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindDayColumnHeaderBackground];
     
-    [self seedDatabase];
+//    [self seedDatabase];
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"STJob"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:YES]];
@@ -101,7 +103,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 }
 
 #pragma mark - Private
-
+/*
 - (void)seedDatabase
 {
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Example" withExtension:@"momd"];
@@ -135,18 +137,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     job2.summary = @"Job 2";
     job2.customer = @"Long Customer Name";
     
-    STJob *job3 = [NSEntityDescription insertNewObjectForEntityForName:@"STJob" inManagedObjectContext:moc];
-    job3.startDate = [[NSDate date] dateByAddingHours:2];
-    job3.endDate = [job3.startDate dateByAddingHours:4];
-    job3.summary = @"Job 3";
-    job3.customer = @"Customer 3";
-    
-    STJob *job4 = [NSEntityDescription insertNewObjectForEntityForName:@"STJob" inManagedObjectContext:moc];
-    job4.startDate = [[NSDate date] dateByAddingHours:3];
-    job4.endDate = [job4.startDate dateByAddingHours:4];
-    job4.summary = @"Job 4";
-    job4.customer = @"Customer 4";
-    
     STJob *job5 = [NSEntityDescription insertNewObjectForEntityForName:@"STJob" inManagedObjectContext:moc];
     job5.startDate = [[NSDate date] dateByAddingHours:1];
     job5.endDate = [job5.startDate dateByAddingHours:6];
@@ -155,7 +145,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     STJob *job6 = [NSEntityDescription insertNewObjectForEntityForName:@"STJob" inManagedObjectContext:moc];
     job6.startDate = [[NSDate date] dateByAddingHours:0];
-    job6.endDate = [job6.startDate dateByAddingHours:7];
+    job6.endDate = [job6.startDate dateByAddingHours:4];
     job6.summary = @"Long Job Name";
     job6.customer = @"Customer 6";
     
@@ -165,7 +155,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     job7.summary = @"Job 7";
     job7.customer = @"Customer 7";
 }
-
+*/
 #pragma mark - MSCalendarViewController
 
 - (CGFloat)layoutSectionWidth
