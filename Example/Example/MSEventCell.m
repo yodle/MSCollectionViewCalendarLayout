@@ -63,9 +63,9 @@
         [self.summary autoConstrainAttribute:NSLayoutAttributeRight toAttribute:NSLayoutAttributeRight ofView:self withOffset:-contentPadding.right];
         
         [self.customer autoConstrainAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeBottom ofView:self.summary withOffset:contentMargin];
-        [self.summary autoConstrainAttribute:NSLayoutAttributeLeft toAttribute:NSLayoutAttributeLeft ofView:self withOffset:contentPadding.left];
-        [self.summary autoConstrainAttribute:NSLayoutAttributeRight toAttribute:NSLayoutAttributeRight ofView:self withOffset:-contentPadding.right];
-        [self.summary autoConstrainAttribute:NSLayoutAttributeBottom toAttribute:NSLayoutAttributeBottom ofView:self withOffset:-contentPadding.bottom];
+        [self.customer autoConstrainAttribute:NSLayoutAttributeLeft toAttribute:NSLayoutAttributeLeft ofView:self withOffset:contentPadding.left];
+        [self.customer autoConstrainAttribute:NSLayoutAttributeRight toAttribute:NSLayoutAttributeRight ofView:self withOffset:-contentPadding.right];
+//        [self.customer autoConstrainAttribute:NSLayoutAttributeBottom toAttribute:NSLayoutAttributeBottom ofView:self withOffset:-contentPadding.bottom];
     }
     return self;
 }
