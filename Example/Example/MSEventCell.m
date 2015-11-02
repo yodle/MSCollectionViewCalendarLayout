@@ -7,7 +7,9 @@
 //
 
 #import "MSEventCell.h"
-#import "MSEvent.h"
+#import "STJob.h"
+#import "PureLayout.h"
+#import "UIColor+Hex.h"
 
 @interface MSEventCell ()
 
@@ -35,15 +37,15 @@
         self.borderView = [UIView new];
         [self.contentView addSubview:self.borderView];
         
-        self.title = [UILabel new];
-        self.title.numberOfLines = 0;
-        self.title.backgroundColor = [UIColor clearColor];
-        [self.contentView addSubview:self.title];
+        self.summary = [UILabel new];
+        self.summary.numberOfLines = 0;
+        self.summary.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview:self.summary];
         
-        self.location = [UILabel new];
-        self.location.numberOfLines = 0;
-        self.location.backgroundColor = [UIColor clearColor];
-        [self.contentView addSubview:self.location];
+        self.customer = [UILabel new];
+        self.customer.numberOfLines = 0;
+        self.customer.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview:self.customer];
         
         [self updateColors];
         
@@ -51,25 +53,19 @@
         CGFloat contentMargin = 2.0;
         UIEdgeInsets contentPadding = UIEdgeInsetsMake(1.0, (borderWidth + 4.0), 1.0, 4.0);
         
-        [self.borderView makeConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(self.height);
-            make.width.equalTo(@(borderWidth));
-            make.left.equalTo(self.left);
-            make.top.equalTo(self.top);
-        }];
+        [self.borderView autoMatchDimension:ALDimensionHeight toDimension:ALDimensionHeight ofView:self];
+        [self.borderView autoSetDimension:ALDimensionWidth toSize:borderWidth];
+        [self.borderView autoConstrainAttribute:NSLayoutAttributeLeft toAttribute:NSLayoutAttributeLeft ofView:self];
+        [self.borderView autoConstrainAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeTop ofView:self];
         
-        [self.title makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.top).offset(contentPadding.top);
-            make.left.equalTo(self.left).offset(contentPadding.left);
-            make.right.equalTo(self.right).offset(-contentPadding.right);
-        }];
+        [self.summary autoConstrainAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeTop ofView:self withOffset:contentPadding.top];
+        [self.summary autoConstrainAttribute:NSLayoutAttributeLeft toAttribute:NSLayoutAttributeLeft ofView:self withOffset:contentPadding.left];
+        [self.summary autoConstrainAttribute:NSLayoutAttributeRight toAttribute:NSLayoutAttributeRight ofView:self withOffset:-contentPadding.right];
         
-        [self.location makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.title.bottom).offset(contentMargin);
-            make.left.equalTo(self.left).offset(contentPadding.left);
-            make.right.equalTo(self.right).offset(-contentPadding.right);
-            make.bottom.lessThanOrEqualTo(self.bottom).offset(-contentPadding.bottom);
-        }];
+        [self.customer autoConstrainAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeBottom ofView:self.summary withOffset:contentMargin];
+        [self.customer autoConstrainAttribute:NSLayoutAttributeLeft toAttribute:NSLayoutAttributeLeft ofView:self withOffset:contentPadding.left];
+        [self.customer autoConstrainAttribute:NSLayoutAttributeRight toAttribute:NSLayoutAttributeRight ofView:self withOffset:-contentPadding.right];
+//        [self.customer autoConstrainAttribute:NSLayoutAttributeBottom toAttribute:NSLayoutAttributeBottom ofView:self withOffset:-contentPadding.bottom];
     }
     return self;
 }
@@ -98,19 +94,19 @@
 
 #pragma mark - MSEventCell
 
-- (void)setEvent:(MSEvent *)event
+- (void)setJob:(STJob*)job
 {
-    _event = event;
-    self.title.attributedText = [[NSAttributedString alloc] initWithString:event.title attributes:[self titleAttributesHighlighted:self.selected]];
-    self.location.attributedText = [[NSAttributedString alloc] initWithString:event.location attributes:[self subtitleAttributesHighlighted:self.selected]];;
+    _job = job;
+    self.summary.attributedText = [[NSAttributedString alloc] initWithString:job.summary attributes:[self titleAttributesHighlighted:self.selected]];
+    self.customer.attributedText = [[NSAttributedString alloc] initWithString:job.customer attributes:[self subtitleAttributesHighlighted:self.selected]];;
 }
 
 - (void)updateColors
 {
     self.contentView.backgroundColor = [self backgroundColorHighlighted:self.selected];
     self.borderView.backgroundColor = [self borderColor];
-    self.title.textColor = [self textColorHighlighted:self.selected];
-    self.location.textColor = [self textColorHighlighted:self.selected];
+    self.summary.textColor = [self textColorHighlighted:self.selected];
+    self.customer.textColor = [self textColorHighlighted:self.selected];
 }
 
 - (NSDictionary *)titleAttributesHighlighted:(BOOL)highlighted
@@ -141,12 +137,12 @@
 
 - (UIColor *)backgroundColorHighlighted:(BOOL)selected
 {
-    return selected ? [UIColor colorWithHexString:@"35b1f1"] : [[UIColor colorWithHexString:@"35b1f1"] colorWithAlphaComponent:0.2];
+    return selected ? [UIColor colorWithHex:0x35b1f1] : [[UIColor colorWithHex:0x35b1f1] colorWithAlphaComponent:0.2];
 }
 
 - (UIColor *)textColorHighlighted:(BOOL)selected
 {
-    return selected ? [UIColor whiteColor] : [UIColor colorWithHexString:@"21729c"];
+    return selected ? [UIColor whiteColor] : [UIColor colorWithHex:0x21729c];
 }
 
 - (UIColor *)borderColor

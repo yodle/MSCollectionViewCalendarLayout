@@ -21,7 +21,7 @@
 		3A9EDB9416DD913A0017C4ED /* MSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDB9316DD913A0017C4ED /* MSCalendarViewController.m */; };
 		3A9EDB9916DD938A0017C4ED /* MSGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDB9816DD938A0017C4ED /* MSGridline.m */; };
 		3A9EDB9C16DD94940017C4ED /* MSTimeRowHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDB9B16DD94940017C4ED /* MSTimeRowHeaderBackground.m */; };
-		3A9EDBA216DD99E00017C4ED /* MSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDBA116DD99E00017C4ED /* MSEvent.m */; };
+		3A9EDBA216DD99E00017C4ED /* STJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDBA116DD99E00017C4ED /* STJob.m */; };
 		3A9EDBA616DDA0140017C4ED /* Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDBA416DDA0140017C4ED /* Example.xcdatamodeld */; };
 		3A9EDBAA16DDA7410017C4ED /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDBA916DDA7410017C4ED /* MSEventCell.m */; };
 		3A9EDBAD16DDA8420017C4ED /* MSTimeRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDBAC16DDA8420017C4ED /* MSTimeRowHeader.m */; };
@@ -29,6 +29,7 @@
 		3A9EDBB216DDF24C0017C4ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9EDBB116DDF24C0017C4ED /* QuartzCore.framework */; };
 		3A9EDBB816DE8FAF0017C4ED /* MSCurrentTimeGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDBB716DE8FAF0017C4ED /* MSCurrentTimeGridline.m */; };
 		3A9EDBBB16DE8FEB0017C4ED /* MSCurrentTimeIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EDBBA16DE8FEB0017C4ED /* MSCurrentTimeIndicator.m */; };
+		43A0ED591BE01E4A002A8A6A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A0ED581BE01E4A002A8A6A /* CoreData.framework */; };
 		73FE75D8C4884452BD700225 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FEEAE8C40D4C23B857EFA6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +57,8 @@
 		3A9EDB9816DD938A0017C4ED /* MSGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGridline.m; sourceTree = "<group>"; };
 		3A9EDB9A16DD94940017C4ED /* MSTimeRowHeaderBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeRowHeaderBackground.h; sourceTree = "<group>"; };
 		3A9EDB9B16DD94940017C4ED /* MSTimeRowHeaderBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeaderBackground.m; sourceTree = "<group>"; };
-		3A9EDBA016DD99E00017C4ED /* MSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEvent.h; sourceTree = "<group>"; };
-		3A9EDBA116DD99E00017C4ED /* MSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEvent.m; sourceTree = "<group>"; };
+		3A9EDBA016DD99E00017C4ED /* STJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STJob.h; sourceTree = "<group>"; };
+		3A9EDBA116DD99E00017C4ED /* STJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STJob.m; sourceTree = "<group>"; };
 		3A9EDBA516DDA0140017C4ED /* Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Example.xcdatamodel; sourceTree = "<group>"; };
 		3A9EDBA816DDA7410017C4ED /* MSEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEventCell.h; sourceTree = "<group>"; };
 		3A9EDBA916DDA7410017C4ED /* MSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEventCell.m; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		3A9EDBB716DE8FAF0017C4ED /* MSCurrentTimeGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCurrentTimeGridline.m; sourceTree = "<group>"; };
 		3A9EDBB916DE8FEB0017C4ED /* MSCurrentTimeIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCurrentTimeIndicator.h; sourceTree = "<group>"; };
 		3A9EDBBA16DE8FEB0017C4ED /* MSCurrentTimeIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCurrentTimeIndicator.m; sourceTree = "<group>"; };
+		43A0ED581BE01E4A002A8A6A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		68FEEAE8C40D4C23B857EFA6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		807B751049998BA6C860E999 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A0ED591BE01E4A002A8A6A /* CoreData.framework in Frameworks */,
 				3A71A5BB16DF4C0200AF09E5 /* SystemConfiguration.framework in Frameworks */,
 				3A71A5B916DF4BFC00AF09E5 /* MobileCoreServices.framework in Frameworks */,
 				3A9EDBB216DDF24C0017C4ED /* QuartzCore.framework in Frameworks */,
@@ -125,6 +128,7 @@
 		3A9EDB6F16DD8FF10017C4ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43A0ED581BE01E4A002A8A6A /* CoreData.framework */,
 				3A9EDBB116DDF24C0017C4ED /* QuartzCore.framework */,
 				3A9EDB7016DD8FF10017C4ED /* UIKit.framework */,
 				3A9EDB7216DD8FF10017C4ED /* Foundation.framework */,
@@ -197,8 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				3A9EDBA416DDA0140017C4ED /* Example.xcdatamodeld */,
-				3A9EDBA016DD99E00017C4ED /* MSEvent.h */,
-				3A9EDBA116DD99E00017C4ED /* MSEvent.m */,
+				3A9EDBA016DD99E00017C4ED /* STJob.h */,
+				3A9EDBA116DD99E00017C4ED /* STJob.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -320,7 +324,7 @@
 				3A9EDB9416DD913A0017C4ED /* MSCalendarViewController.m in Sources */,
 				3A9EDB9916DD938A0017C4ED /* MSGridline.m in Sources */,
 				3A9EDB9C16DD94940017C4ED /* MSTimeRowHeaderBackground.m in Sources */,
-				3A9EDBA216DD99E00017C4ED /* MSEvent.m in Sources */,
+				3A9EDBA216DD99E00017C4ED /* STJob.m in Sources */,
 				3A9EDBA616DDA0140017C4ED /* Example.xcdatamodeld in Sources */,
 				3A9EDBAA16DDA7410017C4ED /* MSEventCell.m in Sources */,
 				3A9EDBAD16DDA8420017C4ED /* MSTimeRowHeader.m in Sources */,

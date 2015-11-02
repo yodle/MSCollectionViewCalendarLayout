@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class MSEvent;
+@class STJob;
 
 @interface MSEventCell : UICollectionViewCell
 
-@property (nonatomic, weak) MSEvent *event;
+@property (nonatomic, weak) STJob *job;
 
-@property (nonatomic, strong) UILabel *title;
-@property (nonatomic, strong) UILabel *location;
+@property (nonatomic, strong) UILabel *summary;
+@property (nonatomic, strong) UILabel *customer;
 
 @end

@@ -68,11 +68,13 @@ typedef NS_ENUM(NSUInteger, MSHeaderLayoutType) {
 @property (nonatomic) MSSectionLayoutType sectionLayoutType;
 @property (nonatomic) MSHeaderLayoutType headerLayoutType;
 @property (nonatomic) BOOL displayHeaderBackgroundAtOrigin;
+@property (nonatomic) BOOL displayStartOfDayToEarliestHour;
+@property (nonatomic) BOOL displayEndOfDayToLatestHour;
 
 - (NSDate *)dateForTimeRowHeaderAtIndexPath:(NSIndexPath *)indexPath;
 - (NSDate *)dateForDayColumnHeaderAtIndexPath:(NSIndexPath *)indexPath;
 
-- (void)scrollCollectionViewToClosetSectionToCurrentTimeAnimated:(BOOL)animated;
+- (void)scrollCollectionViewToClosestSectionToCurrentTimeAnimated:(BOOL)animated;
 
 // Since a "reloadData" on the UICollectionView doesn't call "prepareForCollectionViewUpdates:", this method must be called first to flush the internal caches
 - (void)invalidateLayoutCache;

@@ -7,6 +7,8 @@
 //
 
 #import "MSDayColumnHeader.h"
+#import "PureLayout.h"
+#import "UIColor+Hex.h"
 
 @interface MSDayColumnHeader ()
 
@@ -31,13 +33,10 @@
         self.title.backgroundColor = [UIColor clearColor];
         [self addSubview:self.title];
         
-        [self.titleBackground makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.title).with.insets(UIEdgeInsetsMake(-6.0, -12.0, -4.0, -12.0));
-        }];
+        [self.titleBackground autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(-6.0, -12.0, -4.0, -12.0)];
         
-        [self.title makeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self);
-        }];
+        [self.title autoConstrainAttribute:NSLayoutAttributeCenterX toAttribute:NSLayoutAttributeCenterX ofView:self];
+        [self.title autoConstrainAttribute:NSLayoutAttributeCenterY toAttribute:NSLayoutAttributeCenterY ofView:self];
     }
     return self;
 }
@@ -62,7 +61,7 @@
     if (currentDay) {
         self.title.textColor = [UIColor whiteColor];
         self.title.font = [UIFont boldSystemFontOfSize:16.0];
-        self.titleBackground.backgroundColor = [UIColor colorWithHexString:@"fd3935"];
+        self.titleBackground.backgroundColor = [UIColor colorWithHex:0xfd3935];
     } else {
         self.title.font = [UIFont systemFontOfSize:16.0];
         self.title.textColor = [UIColor blackColor];
