@@ -1108,11 +1108,11 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
         if ((sectionEarliestHour < earliestHour) && (sectionEarliestHour != NSDateComponentUndefined)) {
             earliestHour = sectionEarliestHour;
         }
-    }
+	}
+	if (self.displayStartOfDayToEarliestHour) {
+		earliestHour = 0;
+	}
     if (earliestHour != NSIntegerMax) {
-		if (self.displayStartOfDayToEarliestHour) {
-			earliestHour = 0;
-		}
         self.cachedEarliestHour = earliestHour;
         return earliestHour;
     } else {
@@ -1131,11 +1131,11 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
         if ((sectionLatestHour > latestHour) && (sectionLatestHour != NSDateComponentUndefined)) {
             latestHour = sectionLatestHour;
         }
-    }
+	}
+	if (self.displayEndOfDayToLatestHour) {
+		latestHour = 24;
+	}
     if (latestHour != NSIntegerMin) {
-		if (self.displayEndOfDayToLatestHour) {
-			latestHour = 24;
-		}
         self.cachedLatestHour = latestHour;
         return latestHour;
     } else {
@@ -1155,11 +1155,11 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
         if (itemStartTime.hour < earliestHour) {
             earliestHour = itemStartTime.hour;
         }
-    }
+	}
+	if (self.displayStartOfDayToEarliestHour) {
+		earliestHour = 0;
+	}
     if (earliestHour != NSIntegerMax) {
-		if (self.displayStartOfDayToEarliestHour) {
-			earliestHour = 0;
-		}
         self.cachedEarliestHours[@(section)] = @(earliestHour);
         return earliestHour;
     } else {
@@ -1185,11 +1185,11 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
         if (itemEndTimeHour > latestHour) {
             latestHour = itemEndTimeHour;
         }
-    }
+	}
+	if (self.displayEndOfDayToLatestHour) {
+		latestHour = 24;
+	}
 	if (latestHour != NSIntegerMin) {
-		if (self.displayEndOfDayToLatestHour) {
-			latestHour = 24;
-		}
         self.cachedLatestHours[@(section)] = @(latestHour);
         return latestHour;
     } else {
