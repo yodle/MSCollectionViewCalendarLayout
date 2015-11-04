@@ -458,13 +458,13 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
             CGFloat timeY = (calendarGridMinY + nearbyintf(((currentTimeDateComponents.hour - earliestHour) * self.hourHeight) + (currentTimeDateComponents.minute * self.minuteHeight)));
 
             CGFloat currentTimeIndicatorMinY = (timeY - nearbyintf(self.currentTimeIndicatorSize.height / 2.0));
-            CGFloat currentTimeIndicatorMinX = (self.timeRowHeaderWidth - self.currentTimeIndicatorSize.width);
+            CGFloat currentTimeIndicatorMinX = (self.timeRowHeaderWidth - self.currentTimeIndicatorSize.width + self.currentTimeLeftMargin);
             currentTimeIndicatorAttributes.frame = (CGRect){{currentTimeIndicatorMinX, currentTimeIndicatorMinY}, self.currentTimeIndicatorSize};
             currentTimeIndicatorAttributes.zIndex = [self zIndexForElementKind:MSCollectionElementKindCurrentTimeIndicator];
             
             CGFloat currentTimeHorizontalGridlineMinY = (timeY - nearbyintf(self.currentTimeHorizontalGridlineHeight / 2.0));
 			CGFloat widthOffset = self.contentMargin.right - self.horizontalGridlineRightMargin;
-			currentTimeHorizontalGridlineAttributes.frame = CGRectMake(calendarGridMinX + self.currentTimeHorizontalGridlineLeftMargin, currentTimeHorizontalGridlineMinY, calendarGridWidth + widthOffset, self.currentTimeHorizontalGridlineHeight);
+			currentTimeHorizontalGridlineAttributes.frame = CGRectMake(calendarGridMinX + self.currentTimeLeftMargin - 1, currentTimeHorizontalGridlineMinY, calendarGridWidth + widthOffset, self.currentTimeHorizontalGridlineHeight); // calendarGridMinX-1 Makes the currentTimeIndicatorGridline abut the currentTimeIndicator
             currentTimeHorizontalGridlineAttributes.zIndex = [self zIndexForElementKind:MSCollectionElementKindCurrentTimeHorizontalGridline];
         }
         
@@ -747,7 +747,7 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
     self.cellMargin = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
     self.contentMargin = ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? UIEdgeInsetsMake(30.0, 0.0, 30.0, 30.0) : UIEdgeInsetsMake(20.0, 0.0, 20.0, 10.0));
 	self.horizontalGridlineRightMargin = self.contentMargin.right;
-	self.currentTimeHorizontalGridlineLeftMargin = 0;
+	self.currentTimeLeftMargin = 0;
     
     self.displayHeaderBackgroundAtOrigin = YES;
     self.sectionLayoutType = ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? MSSectionLayoutTypeHorizontalTile : MSSectionLayoutTypeVerticalTile);
