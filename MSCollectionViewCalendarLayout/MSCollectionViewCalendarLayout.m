@@ -458,12 +458,13 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
             CGFloat timeY = (calendarGridMinY + nearbyintf(((currentTimeDateComponents.hour - earliestHour) * self.hourHeight) + (currentTimeDateComponents.minute * self.minuteHeight)));
 
             CGFloat currentTimeIndicatorMinY = (timeY - nearbyintf(self.currentTimeIndicatorSize.height / 2.0));
-            CGFloat currentTimeIndicatorMinX = (self.timeRowHeaderWidth - self.currentTimeIndicatorSize.width)+1; // +1 Makes the currentTimeIndicator abut the currentTimeIndicatorGridline
+            CGFloat currentTimeIndicatorMinX = (self.timeRowHeaderWidth - self.currentTimeIndicatorSize.width);
             currentTimeIndicatorAttributes.frame = (CGRect){{currentTimeIndicatorMinX, currentTimeIndicatorMinY}, self.currentTimeIndicatorSize};
             currentTimeIndicatorAttributes.zIndex = [self zIndexForElementKind:MSCollectionElementKindCurrentTimeIndicator];
             
             CGFloat currentTimeHorizontalGridlineMinY = (timeY - nearbyintf(self.currentTimeHorizontalGridlineHeight / 2.0));
-            currentTimeHorizontalGridlineAttributes.frame = CGRectMake(calendarGridMinX, currentTimeHorizontalGridlineMinY, calendarGridWidth, self.currentTimeHorizontalGridlineHeight);
+			CGFloat widthOffset = self.contentMargin.right - self.horizontalGridlineRightMargin;
+			currentTimeHorizontalGridlineAttributes.frame = CGRectMake(calendarGridMinX-1, currentTimeHorizontalGridlineMinY, calendarGridWidth + widthOffset, self.currentTimeHorizontalGridlineHeight); // calendarGridMinX-1 Makes the currentTimeIndicatorGridline abut the currentTimeIndicator
             currentTimeHorizontalGridlineAttributes.zIndex = [self zIndexForElementKind:MSCollectionElementKindCurrentTimeHorizontalGridline];
         }
         
