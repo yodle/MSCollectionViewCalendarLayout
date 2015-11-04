@@ -68,8 +68,10 @@ typedef NS_ENUM(NSUInteger, MSHeaderLayoutType) {
 @property (nonatomic) MSSectionLayoutType sectionLayoutType;
 @property (nonatomic) MSHeaderLayoutType headerLayoutType;
 @property (nonatomic) BOOL displayHeaderBackgroundAtOrigin;
+
 @property (nonatomic) BOOL displayStartOfDayToEarliestHour;
 @property (nonatomic) BOOL displayEndOfDayToLatestHour;
+@property (nonatomic) CGFloat horizontalGridlineRightMargin;
 
 - (NSDate *)dateForTimeRowHeaderAtIndexPath:(NSIndexPath *)indexPath;
 - (NSDate *)dateForDayColumnHeaderAtIndexPath:(NSIndexPath *)indexPath;
