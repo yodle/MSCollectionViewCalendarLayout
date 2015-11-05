@@ -509,7 +509,11 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
                 CGFloat itemMaxY = nearbyintf(endHourY + endMinuteY + calendarGridMinY - self.cellMargin.bottom);
                 CGFloat itemMinX = nearbyintf(calendarGridMinX + self.sectionMargin.left + self.cellMargin.left);
                 CGFloat itemMaxX = nearbyintf(itemMinX + (self.sectionWidth - self.cellMargin.left - self.cellMargin.right));
-                itemAttributes.frame = CGRectMake(itemMinX, itemMinY, (itemMaxX - itemMinX), (itemMaxY - itemMinY));
+				CGFloat height = (itemMaxY - itemMinY);
+				if (height < self.minimumItemHeight) {
+					height = self.minimumItemHeight;
+				}
+                itemAttributes.frame = CGRectMake(itemMinX, itemMinY, (itemMaxX - itemMinX), height);
                 
                 itemAttributes.zIndex = [self zIndexForElementKind:nil];
             }
