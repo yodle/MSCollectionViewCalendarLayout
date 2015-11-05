@@ -864,6 +864,40 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 #pragma mark Scrolling
 
+- (void)scrollCollectionViewToVerticallyCenterCurrentTime:(BOOL)animated
+{
+	CGRect currentTimeHorizontalGridlineattributesFrame = [self.currentTimeHorizontalGridlineAttributes[[NSIndexPath indexPathForItem:0 inSection:0]] frame];
+	CGFloat yOfCurrentTime;
+	
+	if (CGRectEqualToRect(currentTimeHorizontalGridlineattributesFrame, CGRectZero)) {
+		NSUInteger section = 0;
+		NSInteger earliestHour = [self earliestHourForSection:section];
+		NSDateComponents *currentTimeDateComponents = [self currentTimeDateComponents];
+		CGFloat calendarGridMinY = 0.0;
+		yOfCurrentTime = (calendarGridMinY + nearbyintf(((currentTimeDateComponents.hour - earliestHour) * self.hourHeight) + (currentTimeDateComponents.minute * self.minuteHeight)));
+	} else {
+		yOfCurrentTime = CGRectGetMinY(currentTimeHorizontalGridlineattributesFrame);
+	}
+	
+	NSLog(@"1: %f", CGRectGetHeight(self.collectionView.frame));
+	CGFloat yOffset = nearbyintf(yOfCurrentTime - (CGRectGetHeight(self.collectionView.frame) / 2.0));
+	
+	[self.collectionView setContentOffset:CGPointMake(0, yOffset) animated:animated];
+}
+
+- (void)scrollCollectionViewToCurrentHour:(BOOL)animated
+{
+	CGFloat yOfCurrentHour;
+	
+	NSUInteger section = 0;
+	NSInteger earliestHour = [self earliestHourForSection:section];
+	NSDateComponents *currentTimeDateComponents = [self currentTimeDateComponents];
+	CGFloat calendarGridMinY = 0.0;
+	yOfCurrentHour = (calendarGridMinY + nearbyintf((currentTimeDateComponents.hour - earliestHour) * self.hourHeight));
+	
+	[self.collectionView setContentOffset:CGPointMake(0, yOfCurrentHour) animated:animated];
+}
+
 - (void)scrollCollectionViewToClosestSectionToCurrentTimeAnimated:(BOOL)animated
 {
     if (self.collectionView.numberOfSections != 0) {
