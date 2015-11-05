@@ -73,7 +73,7 @@ typedef NS_ENUM(NSUInteger, MSHeaderLayoutType) {
 @property (nonatomic) BOOL displayEndOfDayToLatestHour;
 @property (nonatomic) CGFloat horizontalGridlineRightMargin;
 @property (nonatomic) CGFloat currentTimeLeftMargin;
-@property (nonatomic) CGFloat mimimumItemHeight;
+@property (nonatomic) CGFloat minimumItemHeight;
 
 - (NSDate *)dateForTimeRowHeaderAtIndexPath:(NSIndexPath *)indexPath;
 - (NSDate *)dateForDayColumnHeaderAtIndexPath:(NSIndexPath *)indexPath;
