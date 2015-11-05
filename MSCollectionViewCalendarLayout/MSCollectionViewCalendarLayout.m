@@ -464,7 +464,7 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
             
             CGFloat currentTimeHorizontalGridlineMinY = (timeY - nearbyintf(self.currentTimeHorizontalGridlineHeight / 2.0));
 			CGFloat widthOffset = self.contentMargin.right - self.horizontalGridlineRightMargin;
-			currentTimeHorizontalGridlineAttributes.frame = CGRectMake(calendarGridMinX + self.currentTimeLeftMargin - 1, currentTimeHorizontalGridlineMinY, calendarGridWidth + widthOffset + self.currentTimeLeftMargin + 1, self.currentTimeHorizontalGridlineHeight); // calendarGridMinX-1 Makes the currentTimeIndicatorGridline abut the currentTimeIndicator
+			currentTimeHorizontalGridlineAttributes.frame = CGRectMake(calendarGridMinX + self.currentTimeLeftMargin - 1, currentTimeHorizontalGridlineMinY, calendarGridWidth + widthOffset - self.currentTimeLeftMargin + 1, self.currentTimeHorizontalGridlineHeight); // calendarGridMinX-1 Makes the currentTimeIndicatorGridline abut the currentTimeIndicator
             currentTimeHorizontalGridlineAttributes.zIndex = [self zIndexForElementKind:MSCollectionElementKindCurrentTimeHorizontalGridline];
         }
         
