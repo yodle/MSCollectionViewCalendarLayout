@@ -452,8 +452,8 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
         NSDateComponents *currentDay = [self dayForSection:section];
         NSDateComponents *currentTimeDateComponents = [self currentTimeDateComponents];
         // The current time is within this section's day
-		BOOL isSameDay = (currentTimeDateComponents.year == currentDay.year) && (currentTimeDateComponents.month == currentDay.month) && (currentTimeDateComponents.day == currentDay.day);
-		if (isSameDay && (currentTimeDateComponents.hour >= earliestHour) && (currentTimeDateComponents.hour < latestHour)) {
+        BOOL isSameDay = (currentTimeDateComponents.year == currentDay.year) && (currentTimeDateComponents.month == currentDay.month) && (currentTimeDateComponents.day == currentDay.day);
+        if (isSameDay && (currentTimeDateComponents.hour >= earliestHour) && (currentTimeDateComponents.hour < latestHour)) {
             
             // The y value of the current time
             CGFloat timeY = (calendarGridMinY + nearbyintf(((currentTimeDateComponents.hour - earliestHour) * self.hourHeight) + (currentTimeDateComponents.minute * self.minuteHeight)));
